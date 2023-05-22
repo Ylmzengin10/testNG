@@ -6,7 +6,7 @@ import pages.AmazonPage;
 import utilities.Driver;
 
 public class C01_PagesIlkTest {
-    @Test
+    @Test(groups = "smoke")
     public void amazonTest(){
        // amazon anasayfaya gidelim
 

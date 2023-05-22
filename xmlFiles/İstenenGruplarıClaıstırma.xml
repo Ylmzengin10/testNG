@@ -1,0 +1,37 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!--   Toplu çalıştırmada
+       çalışacak method'ları tek tek xml dosyasına işlemek yerine
+       her methodun dahil olacağı test gruplarını
+       method'ların bulunduğu yerde işaretleyebiliriz
+
+       örneğin smoke test için buradan tek tek method sececeğimize
+       smoke olarak çalışacak test merhodlarını
+       framework'de gruplaayabilirz
+
+       bir gruba dahil olan test method'ları farklı konumlarda olabileceği gibi
+       bir tek test methodu birden fazla gruba dahil olabilir
+
+       bu durumda grup çalıştırma için iki hiyerarşi oluşturulmalıdır
+       1- çalışacak veya çalışmayacak grupları belirlemek için
+       2- çalıştırmak istediğimiz testlerin yerini gömstermek için
+
+
+
+ -->
+<suite name="Istenen grupları çalıştırma ">
+    <test name="smoke test">
+        <groups>
+            <run>
+                <!-- include ve exclude birden fazla kullanılabilir,
+                     istediğimiz ozelliklere sahip method'ları
+                     net olarak belirleyebilirz  -->
+
+                <include name="minireg1"></include>
+                <exclude name="smoke"></exclude>
+            </run>
+        </groups>
+        <packages>
+            <package name="tests.*"></package>
+        </packages>
+    </test>
+</suite>
