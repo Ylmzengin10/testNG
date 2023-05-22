@@ -1,0 +1,24 @@
+
+<!-- TestNG ile toplu dosya calistirmak icin xml uzantili dosyalar kullaniriz
+     xml dosyalari HTML kodlarina benzer sekilde yazilan
+     xml kodlarindan olusur
+     Toplu calistirma icin ihtiyacimiz olan xml kodlari testng.org
+     sayfasinda bulabiliriz
+     Tum testNG xml dosyalari
+     <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" > kodu ile baslamalidir
+     sonrasinda calistiracagimiz testleri
+     hiyerarsik olarak xml dosyasinda belirleyebiliriz
+     -->
+
+
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Istenen class'lari calistirma">
+    <test name="smokeTest">
+        <classes>
+            <class name="tests.day16_POM_Assertion.C02_SingletonPattern"></class>
+            <class name="tests.day14_TestNGFramworkOlusturma.C04_DriverIlkTest"></class>
+            <class name="tests.day16_POM_Assertion.C01_DriverClassSonHali"></class>
+        </classes>
+    </test>
+</suite>
