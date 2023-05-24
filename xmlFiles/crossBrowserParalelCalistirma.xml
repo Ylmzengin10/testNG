@@ -1,0 +1,41 @@
+<!--   paralel çalıştırma ile cross browser çalıştırma
+       birbirinden bağımsız konulardır
+
+       yani ikiside olabilir
+       (paralel cross browser çalıştırma : aynı anda birden fazla browser çalışır
+                                           ve tüm browserlar birbirinden farklı olur)
+
+
+       - sadece biri olabilir
+       ( cross browser sirali çalışma
+       veya sadece bir tür browser ile birden fazla browser'ın aynı anda çalışmaya başlaması)
+
+       - hiç  biri de olmayabilir
+       istediğimiz kadar test sıralı olarak
+       configuration.properties'de tanımlanan browser ile çalışır
+
+ -->
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="paralel cross browser testing" thread-count="2" parallel="tests" verbose="3" >
+    <!-- paralel test yapmak için yazdık bu üçünü ama gerek yok aynı anda
+         çalışınca iyi olmuyor  -->
+
+    <test name="chrome testi">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="tests.day19_crossBrowserTesting.C01_AmazonSearch"></class>
+        </classes>
+
+
+    </test>
+    <test name="firefox testi">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="tests.day19_crossBrowserTesting.C02_AlertsTesti"></class>
+        </classes>
+    </test>
+
+
+</suite>
